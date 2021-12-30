@@ -1,1 +1,0 @@
-# elasticsearch-cluster-helm-chart-with-security-enabled

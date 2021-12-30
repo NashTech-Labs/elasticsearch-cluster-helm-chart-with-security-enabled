@@ -1,0 +1,16 @@
+{{- if .Values.esConfig }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: elasticsearch-certs
+spec:
+  commonName: {{ .Values.CommanName }}
+  isCA: true
+  issuerRef:
+    kind: Issuer
+    name: elasticsearch-issuer
+  secretName: elasticsearch-certs
+  subject:
+    organizations:
+      - {{ .Values.organizationName }}
+{{- end -}}
